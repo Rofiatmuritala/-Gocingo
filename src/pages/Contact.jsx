@@ -25,7 +25,7 @@ function Contact() {
     <div className="bg-gray-100">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+          <h2 className="text-3xl mt-8 font-extrabold text-gray-900 sm:text-4xl">
             Contact Us
           </h2>
           <p className="mt-4 text-lg text-gray-500">
@@ -83,7 +83,7 @@ function Contact() {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                    className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-black focus:border-black"
                   />
                 </div>
                 <div>
@@ -100,7 +100,7 @@ function Contact() {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                    className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-black focus:border-black"
                   />
                 </div>
                 <div>
@@ -117,13 +117,13 @@ function Contact() {
                     required
                     value={formData.message}
                     onChange={handleChange}
-                    className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                    className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-black focus:border-black"
                   ></textarea>
                 </div>
                 <div>
                   <button
                     type="submit"
-                    className="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    className="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-black hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black"
                   >
                     Send Message
                   </button>

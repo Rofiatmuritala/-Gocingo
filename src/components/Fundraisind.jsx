@@ -21,11 +21,11 @@ const FundraisingCards = () => {
   ];
 
   return (
-    <section className="grid grid-cols-3 gap-2  md:grid-cols-3 lg:gap-6 p-10">
+    <section className="grid grid-cols-1 gap-2  md:grid-cols-3 lg:gap-6 p-10">
       {cards.map((card, index) => (
         <div
           key={index}
-          className={` p-2 md:p-5 text-white ${card.bgColor} rounded-lg shadow-md`}
+          className={` p-2 md:p-5 text-white text-center ${card.bgColor} rounded-lg shadow-md`}
         >
           <h3 className=" text-xs md:text-lg lg:text-xl font-bold">
             {card.title}

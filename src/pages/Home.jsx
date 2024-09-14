@@ -4,11 +4,13 @@ import FundraisingCards from "../components/Fundraisind";
 import FundraisingStats from "../components/FundraisingStats";
 import FAQSection from "../components/FAQ";
 import TeamSection from "../components/Team";
+import Projects from "./Project";
 
 export default function () {
   return (
     <div>
       <Hero />
+      <Projects />
       <FundraisingCards />
       <FundraisingStats />
       <TeamSection />

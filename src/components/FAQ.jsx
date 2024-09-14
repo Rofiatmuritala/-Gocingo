@@ -14,9 +14,9 @@ const FAQSection = () => {
   }, []);
 
   return (
-    <div className="mt-24">
-      <h2 className="text-3xl font-bold text-center mt-18 mb-2">
-        Frequently asked questions
+    <div className="mt-28">
+      <h2 className="text-3xl font-bold text-center  mb-2">
+        Frequently Asked Questions
       </h2>
 
       <div className="bg-white border border-gray-200 divide-y divide-gray-200 rounded-xl m-2 md:m-8 ">

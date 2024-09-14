@@ -31,11 +31,11 @@ const DonationForm = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100 relative mt-6">
+    <div className="flex justify-center items-center min-h-screen bg-white relative mt-6">
       {/* Donation Form */}
       {!proceedToPayment && !thankYouMessage && (
-        <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-3xl">
-          <h2 className="text-lg lg:text-xl font-bold mb-2">
+        <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-3xl ">
+          <h2 className="text-lg lg:text-xl font-bold mt-24 mb-6 md:mt-4 sm:text-center">
             Donate to Our Cause
           </h2>
           <p className="text-sm text-gray-600 mb-4">

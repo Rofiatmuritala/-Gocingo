@@ -28,7 +28,7 @@ function Hero() {
             <div class="flex w-full mx-auto text-left">
               <div class="relative inline-flex items-center mx-auto align-middle py-2 px-4 lg:pt-10 sm:px-6 lg:px-8">
                 <div class="text-center">
-                  <h1 className="text-3xl pt-8 font-extrabold tracking-tight text-black sm:text-5xl lg:text-5xl">
+                  <h1 className="text-3xl pt-24 lg:pt-8 font-extrabold tracking-tight text-black sm:text-5xl lg:text-5xl">
                     Making a Difference
                   </h1>
                   <p className="mt-6 text-xl text-black max-w-3xl relative">
@@ -62,7 +62,7 @@ function Hero() {
           {/*  */}
         </section>
         {/* Hero section */}
-        <div class=" w-full dark:bg-gray-900">
+        {/* <div class=" w-full dark:bg-gray-900">
           <div class="max-w-4xl mx-auto py-3 px-4 md:px-8">
             <div class="grid max-w-4xl grid-cols-1 gap-8 mx-auto auto-rows-fr lg:mx-0 lg:max-w-none lg:grid-cols-5">
               <article class="relative flex flex-col justify-end px-4 pt-40 pb-4 overflow-hidden bg-gray-900 md:pt-28 isolate rounded-xl dark:shadow dark:shadow-gray-400/50">
@@ -146,7 +146,7 @@ function Hero() {
               </article>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Featured projects and donations counter */}
         <div className="bg-gray-100 py-12">

@@ -16,9 +16,11 @@ const TeamSection = () => {
   ];
 
   return (
-    <section className="p-2 bg-white">
-      <h2 className="text-3xl font-bold text-center mb-6">Meet our team</h2>
-      <div className="grid grid-cols-4 gap-2 md:grid-cols-4 lg:gap-6">
+    <section className="p-6 bg-white">
+      <h2 className="text-3xl mt-4 font-bold text-center mb-6">
+        Meet our team
+      </h2>
+      <div className="grid grid-cols-2 gap-6 md:grid-cols-4 lg:gap-6">
         {team.map((member, index) => (
           <div key={index} className="text-center">
             <img
