@@ -1,0 +1,29 @@
+{
+  "faqs": [
+    {
+      "id": 1,
+      "question": "What is the mission of the NGO?",
+      "answer": "Our mission is to support underprivileged communities by providing education, healthcare, and sustainable development programs."
+    },
+    {
+      "id": 2,
+      "question": "How can I volunteer?",
+      "answer": "You can volunteer by signing up through our 'Get Involved' page or by contacting us directly via email or phone."
+    },
+    {
+      "id": 3,
+      "question": "Where does the NGO operate?",
+      "answer": "We operate in multiple regions, including Africa, Southeast Asia, and Latin America, focusing on rural areas with limited access to basic services."
+    },
+    {
+      "id": 4,
+      "question": "How are donations used?",
+      "answer": "Donations are used to fund our various projects such as building schools, providing clean water, and organizing healthcare clinics."
+    },
+    {
+      "id": 5,
+      "question": "Are donations tax-deductible?",
+      "answer": "Yes, all donations are tax-deductible as we are a registered non-profit organization."
+    }
+  ]
+}
