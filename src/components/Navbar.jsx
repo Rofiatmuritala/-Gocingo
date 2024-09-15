@@ -32,7 +32,7 @@ const Contacts = [
   {
     name: "Get In Touch",
     description: "Get a better understanding of your traffic",
-    to: "/contacts",
+    to: "/contact",
     icon: ChartPieIcon,
   },
   {
@@ -43,8 +43,8 @@ const Contacts = [
   },
 ];
 const callsToAction = [
-  { name: "Watch demo", href: "#", icon: PlayCircleIcon },
-  { name: "Contact sales", href: "#", icon: PhoneIcon },
+  // { name: "Watch demo", href: "#", icon: PlayCircleIcon },
+  // { name: "Contact sales", href: "#", icon: PhoneIcon },
 ];
 
 export default function Navbar() {
