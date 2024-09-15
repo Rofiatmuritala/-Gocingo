@@ -20,16 +20,18 @@ const TeamSection = () => {
       <h2 className="text-3xl mt-4 font-bold text-center mb-6">
         Meet our team
       </h2>
-      <div className="grid grid-cols-2 gap-6 md:grid-cols-4 lg:gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:grid-cols-4 lg:gap-6">
         {team.map((member, index) => (
           <div key={index} className="text-center">
             <img
               src={member.image}
               alt={member.name}
-              className="w-80 h-50 md:h-56 object-cover"
+              className="w-80 h-40 md:h-56 object-cover"
             />
-            <h3 className="mt-4 text-xs lg:text-xl font-bold">{member.name}</h3>
-            <p className="text-xs lg:text-xl">{member.role}</p>
+            <h3 className="mt-4 text-sm md:text-lg lg:text-xl font-bold">
+              {member.name}
+            </h3>
+            <p className="text-sm lg:text-xl">{member.role}</p>
           </div>
         ))}
       </div>

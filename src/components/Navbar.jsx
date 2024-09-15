@@ -28,80 +28,26 @@ import {
 } from "@heroicons/react/20/solid";
 import { Link } from "react-router-dom";
 
-const whoWeAres = [
-  {
-    name: "Mission",
-    description: "Get a better understanding of your traffic",
-    to: "/about",
-    icon: ChartPieIcon,
-  },
-  {
-    name: "Vision",
-    description: "Speak directly to your customers",
-    to: "/about",
-    icon: CursorArrowRaysIcon,
-  },
-  {
-    name: "Value",
-    description: "Your customers’ data will be safe and secure",
-    to: "/about",
-    icon: FingerPrintIcon,
-  },
-];
-const projects = [
-  {
-    name: "Education",
-    description: "Get a better understanding of your traffic",
-    to: "/projects",
-    icon: ChartPieIcon,
-  },
-  {
-    name: "Health",
-    description: "Speak directly to your customers",
-    to: "/",
-    icon: CursorArrowRaysIcon,
-  },
-  {
-    name: "Clean Water",
-    description: "Your customers’ data will be safe and secure",
-    to: "/",
-    icon: FingerPrintIcon,
-  },
-];
-const getInvolved = [
-  {
-    name: "Volunteer",
-    description: "Get a better understanding of your traffic",
-    to: "/volunteering",
-    icon: ChartPieIcon,
-  },
-  {
-    name: "Work with us",
-    description: "Speak directly to your customers",
-    to: "/volunteering",
-    icon: CursorArrowRaysIcon,
-  },
-];
-const contacts = [
+const Contacts = [
   {
     name: "Get In Touch",
     description: "Get a better understanding of your traffic",
-    to: "/contact",
+    to: "/contacts",
     icon: ChartPieIcon,
   },
   {
     name: "FAQs",
-    description: "Speak directly to your customers",
-    to: "/FAQs",
+    description: "Make all enquiries",
+    to: "/faqs",
     icon: CursorArrowRaysIcon,
   },
 ];
-// const callsToAction = [
-//   { name: "Watch demo", href: "#", icon: PlayCircleIcon },
-//   { name: "Contact sales", href: "#", icon: PhoneIcon },
-// ];
+const callsToAction = [
+  { name: "Watch demo", href: "#", icon: PlayCircleIcon },
+  { name: "Contact sales", href: "#", icon: PhoneIcon },
+];
 
-export default function Volunteering() {
+export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -132,7 +78,6 @@ export default function Volunteering() {
               <Bars3Icon aria-hidden="true" className="h-6 w-6" />
             </button>
           </div>
-
           <PopoverGroup className="hidden lg:flex lg:gap-x-12">
             <Link
               to={"/"}
@@ -140,126 +85,25 @@ export default function Volunteering() {
             >
               Home
             </Link>
-            <Popover className="relative">
-              <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
-                Who We Are
-                <ChevronDownIcon
-                  aria-hidden="true"
-                  className="h-5 w-5 flex-none text-gray-400"
-                />
-              </PopoverButton>
+            <Link
+              to={"/about"}
+              className="text-sm font-semibold leading-6 text-gray-900"
+            >
+              About Us
+            </Link>
+            <Link
+              to={"/projects"}
+              className="text-sm font-semibold leading-6 text-gray-900"
+            >
+              Projects
+            </Link>
+            <Link
+              to={"/volunteering"}
+              className="text-sm font-semibold leading-6 text-gray-900"
+            >
+              Get Involve
+            </Link>
 
-              <PopoverPanel
-                transition
-                className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
-              >
-                <div className="p-4">
-                  {whoWeAres.map((item) => (
-                    <div
-                      key={item.name}
-                      className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
-                    >
-                      <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                        <item.icon
-                          aria-hidden="true"
-                          className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
-                        />
-                      </div>
-                      <div className="flex-auto">
-                        <Link
-                          to={item.to}
-                          className="block font-semibold text-gray-900"
-                        >
-                          {item.name}
-                          <span className="absolute inset-0" />
-                        </Link>
-                        <p className="mt-1 text-gray-600">{item.description}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </PopoverPanel>
-            </Popover>
-            <Popover className="relative">
-              <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
-                Projects
-                <ChevronDownIcon
-                  aria-hidden="true"
-                  className="h-5 w-5 flex-none text-gray-400"
-                />
-              </PopoverButton>
-
-              <PopoverPanel
-                transition
-                className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
-              >
-                <div className="p-4">
-                  {projects.map((item) => (
-                    <div
-                      key={item.name}
-                      className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
-                    >
-                      <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                        <item.icon
-                          aria-hidden="true"
-                          className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
-                        />
-                      </div>
-                      <div className="flex-auto">
-                        <Link
-                          to={item.to}
-                          className="block font-semibold text-gray-900"
-                        >
-                          {item.name}
-                          <span className="absolute inset-0" />
-                        </Link>
-                        <p className="mt-1 text-gray-600">{item.description}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </PopoverPanel>
-            </Popover>
-            <Popover className="relative">
-              <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
-                Get Involve
-                <ChevronDownIcon
-                  aria-hidden="true"
-                  className="h-5 w-5 flex-none text-gray-400"
-                />
-              </PopoverButton>
-
-              <PopoverPanel
-                transition
-                className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
-              >
-                <div className="p-4">
-                  {getInvolved.map((item) => (
-                    <div
-                      key={item.name}
-                      className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
-                    >
-                      <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                        <item.icon
-                          aria-hidden="true"
-                          className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
-                        />
-                      </div>
-                      <div className="flex-auto">
-                        <Link
-                          to={item.to}
-                          className="block font-semibold text-gray-900"
-                        >
-                          {item.name}
-                          <span className="absolute inset-0" />
-                        </Link>
-                        <p className="mt-1 text-gray-600">{item.description}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </PopoverPanel>
-            </Popover>
             <Popover className="relative">
               <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
                 Contact
@@ -274,7 +118,7 @@ export default function Volunteering() {
                 className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
               >
                 <div className="p-4">
-                  {contacts.map((item) => (
+                  {Contacts.map((item) => (
                     <div
                       key={item.name}
                       className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
@@ -298,10 +142,24 @@ export default function Volunteering() {
                     </div>
                   ))}
                 </div>
+                <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
+                  {callsToAction.map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
+                    >
+                      <item.icon
+                        aria-hidden="true"
+                        className="h-5 w-5 flex-none text-gray-400"
+                      />
+                      {item.name}
+                    </a>
+                  ))}
+                </div>
               </PopoverPanel>
             </Popover>
           </PopoverGroup>
-
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <Link to={"/donate"}>
               <button className="animate-bounce focus:animate-none hover:animate-none w-full text-left block px-4 py-2 text-base rounded-full bg-black font-medium text-white hover:text-gray-800 hover:bg-green-600">
@@ -317,16 +175,16 @@ export default function Volunteering() {
         >
           <div className="fixed inset-0 z-10" />
           <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-            <div className="flex items-center justify-between">
-              {/* <Link to={"/"} className="-m-1.5 p-1.5">
-                Gocingo */}
-              {/* <span className="sr-only ">Gocingo</span>
+            <div className="flex items-center justify-between font-signature text-green-500">
+              <Link to={"/"} className="-m-1.5 p-1.5">
+                Gocingo
+                {/* <span className="sr-only ">Gocingo</span>
               <img
                 alt=""
                 src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                 className="h-8 w-auto"
               /> */}
-              {/* </Link> */}
+              </Link>
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(false)}
@@ -345,69 +203,24 @@ export default function Volunteering() {
                   >
                     Home
                   </Link>
-                  <Disclosure as="div" className="-mx-3">
-                    <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                      Who We Are
-                      <ChevronDownIcon
-                        aria-hidden="true"
-                        className="h-5 w-5 flex-none group-data-[open]:rotate-180"
-                      />
-                    </DisclosureButton>
-                    <DisclosurePanel className="mt-2 space-y-2">
-                      {[...whoWeAres].map((item) => (
-                        <DisclosureButton
-                          key={item.name}
-                          as="Link"
-                          to={item.to}
-                          className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                        >
-                          {item.name}
-                        </DisclosureButton>
-                      ))}
-                    </DisclosurePanel>
-                  </Disclosure>
-                  <Disclosure as="div" className="-mx-3">
-                    <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                      Projects
-                      <ChevronDownIcon
-                        aria-hidden="true"
-                        className="h-5 w-5 flex-none group-data-[open]:rotate-180"
-                      />
-                    </DisclosureButton>
-                    <DisclosurePanel className="mt-2 space-y-2">
-                      {[...projects].map((item) => (
-                        <DisclosureButton
-                          key={item.name}
-                          as="Link"
-                          to={item.to}
-                          className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                        >
-                          {item.name}
-                        </DisclosureButton>
-                      ))}
-                    </DisclosurePanel>
-                  </Disclosure>
-                  <Disclosure as="div" className="-mx-3">
-                    <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                      Get Involve
-                      <ChevronDownIcon
-                        aria-hidden="true"
-                        className="h-5 w-5 flex-none group-data-[open]:rotate-180"
-                      />
-                    </DisclosureButton>
-                    <DisclosurePanel className="mt-2 space-y-2">
-                      {[...getInvolved].map((item) => (
-                        <DisclosureButton
-                          key={item.name}
-                          as="Link"
-                          to={item.to}
-                          className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                        >
-                          {item.name}
-                        </DisclosureButton>
-                      ))}
-                    </DisclosurePanel>
-                  </Disclosure>
+                  <Link
+                    to={"/about"}
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  >
+                    About Us
+                  </Link>
+                  <Link
+                    to={"/projects"}
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  >
+                    Projects
+                  </Link>
+                  <Link
+                    to={"/volunteering"}
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  >
+                    Get Involve
+                  </Link>
                   <Disclosure as="div" className="-mx-3">
                     <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
                       Contact
@@ -416,13 +229,13 @@ export default function Volunteering() {
                         className="h-5 w-5 flex-none group-data-[open]:rotate-180"
                       />
                     </DisclosureButton>
-                    <DisclosurePanel className="mt-2 space-y-2 text-base ">
-                      {[...contacts].map((item) => (
+                    <DisclosurePanel className="mt-2 space-y-2">
+                      {[...Contacts, ...callsToAction].map((item) => (
                         <DisclosureButton
                           key={item.name}
                           as="Link"
                           to={item.to}
-                          className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50 text-base "
+                          className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                         >
                           {item.name}
                         </DisclosureButton>

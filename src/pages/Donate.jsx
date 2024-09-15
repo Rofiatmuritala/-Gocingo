@@ -32,7 +32,6 @@ const DonationForm = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-white relative mt-6">
-      {/* Donation Form */}
       {!proceedToPayment && !thankYouMessage && (
         <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-3xl ">
           <h2 className="text-lg lg:text-xl font-bold mt-24 mb-6 md:mt-4 sm:text-center">
@@ -43,9 +42,7 @@ const DonationForm = () => {
           </p>
           <form onSubmit={handleProceedToPayment}>
             <div className="flex flex-col md:flex-row md:space-x-4 md:items-center">
-              {/* Left Section (Name, Email, Amount) */}
               <div className="flex-1">
-                {/* Donor Name Input */}
                 <div className="mb-4">
                   <label className="block text-sm font-medium text-gray-700 mb-1">
                     Your Name
@@ -60,7 +57,6 @@ const DonationForm = () => {
                   />
                 </div>
 
-                {/* Donor Email Input */}
                 <div className="mb-4">
                   <label className="block text-sm font-medium text-gray-700 mb-1">
                     Your Email
@@ -75,7 +71,6 @@ const DonationForm = () => {
                   />
                 </div>
 
-                {/* Donation Amount Input */}
                 <div className="mb-4">
                   <label className="block text-sm font-medium text-gray-700 mb-1">
                     Donation Amount ($)
@@ -91,9 +86,7 @@ const DonationForm = () => {
                 </div>
               </div>
 
-              {/* Right Section (Payment, Message) */}
               <div className="flex-1">
-                {/* Payment Method Options */}
                 <div className="mb-4">
                   <label className="block text-sm font-medium text-gray-700 mb-1">
                     Payment Method
@@ -132,7 +125,6 @@ const DonationForm = () => {
                   </div>
                 </div>
 
-                {/* Optional Message Input */}
                 <div className="mb-4">
                   <label className="block text-sm font-medium text-gray-700 mb-1">
                     Message (Optional)
@@ -145,7 +137,6 @@ const DonationForm = () => {
                   />
                 </div>
 
-                {/* Proceed to Payment Button */}
                 <button
                   type="submit"
                   className="w-full bg-lime-400 text-white py-2 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
@@ -158,7 +149,6 @@ const DonationForm = () => {
         </div>
       )}
 
-      {/* Payment Confirmation */}
       {proceedToPayment && (
         <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-sm">
           <h2 className="text-lg font-bold mb-4">Confirm Your Donation</h2>
@@ -194,7 +184,6 @@ const DonationForm = () => {
         </div>
       )}
 
-      {/* Thank You Message */}
       {thankYouMessage && (
         <div className="absolute inset-0 bg-gray-900 bg-opacity-75 flex justify-center items-center">
           <div className="bg-white p-6 rounded-lg shadow-lg text-center">

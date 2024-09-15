@@ -1,8 +1,6 @@
-// src/pages/ProjectDetail.js
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 
-// You would typically fetch this data from an API
 const projectsData = {
   1: {
     id: 1,
@@ -46,7 +44,6 @@ const projectsData = {
     startDate: "January 2020",
     endDate: "Ongoing",
   },
-  // ... add more project details as needed
 };
 
 function ProjectDetail() {
@@ -61,7 +58,7 @@ function ProjectDetail() {
     <div className="bg-white">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+          <h2 className="text-3xl mt-8 font-extrabold text-gray-900 sm:text-4xl">
             {project.title}
           </h2>
           <p className="mt-4 text-xl text-gray-500">{project.description}</p>

@@ -30,14 +30,14 @@ function About() {
           <h2 className="text-3xl mt-8 font-extrabold text-gray-900 sm:text-4xl">
             About Us
           </h2>
-          <p className="mt-4 text-lg text-gray-500">
+          <p className="mt-4 text-sm md:text-lg text-gray-500">
             Learn about our mission, values, and the team behind our work.
           </p>
         </div>
 
         <div className="mt-16">
           <h3 className="text-2xl font-bold text-gray-900">Our Mission</h3>
-          <p className="mt-4 text-lg text-gray-500">
+          <p className="mt-4 text-sm md:text-lg text-gray-500">
             Our NGO is dedicated to improving lives and creating lasting change
             in communities around the world. We focus on sustainable
             development, education, and healthcare initiatives to empower
@@ -47,7 +47,7 @@ function About() {
 
         <div className="mt-20">
           <h3 className="text-2xl font-bold text-gray-900">Our Values</h3>
-          <ul className="mt-4 text-lg text-gray-500 list-disc list-inside">
+          <ul className="mt-4 text-sm md:text-lg text-gray-500 list-disc list-inside">
             <li>
               Compassion: We approach our work with empathy and understanding.
             </li>

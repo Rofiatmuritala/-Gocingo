@@ -8,8 +8,7 @@ import Projects from "./pages/Project";
 import ProjectDetail from "./pages/ProjectDetail";
 import DonationPage from "./pages/Donate";
 import GetInvolve from "./pages/GetInvolve";
-import FAQSection from "./components/FAQ";
-// import DonatePage from "./pages/Donate";
+import FAQsPage from "./pages/FAQsPage";
 
 function App() {
   return (
@@ -23,7 +22,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/volunteering" element={<GetInvolve />} />
         <Route path="/donate" element={<DonationPage />} />
-        <Route path="/faqs" element={<FAQSection />} />
+        <Route path="/faqs" element={<FAQsPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>

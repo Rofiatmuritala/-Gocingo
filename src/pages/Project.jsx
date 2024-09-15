@@ -1,6 +1,5 @@
-// src/pages/Projects.js
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const projects = [
   {
@@ -10,6 +9,7 @@ const projects = [
       "Providing clean and safe drinking water to rural communities in developing countries.",
     image: "/clean-water.jpg",
     status: "ongoing",
+    category: "Clean Water",
   },
   {
     id: 2,
@@ -17,7 +17,8 @@ const projects = [
     description:
       "Building schools and providing educational resources in underprivileged areas.",
     image: "/education.jpg",
-    status: "ongoing",
+    status: "completed",
+    category: "Education",
   },
   {
     id: 3,
@@ -26,6 +27,7 @@ const projects = [
       "Teaching sustainable farming techniques to improve food security and livelihoods.",
     image: "/Sustainable-Agriculture.png",
     status: "ongoing",
+    category: "Sustainable Agriculture",
   },
   {
     id: 4,
@@ -34,6 +36,7 @@ const projects = [
       "Mobile clinics providing essential healthcare services to remote communities.",
     image: "/Health.jpg",
     status: "completed",
+    category: "Health",
   },
   {
     id: 5,
@@ -41,21 +44,58 @@ const projects = [
     description: "Implementing solar power solutions in off-grid communities.",
     image: "/Energy.jpg",
     status: "completed",
+    category: "Energy",
+  },
+  {
+    id: 6,
+    title: "Education for All",
+    description:
+      "Building schools and providing educational resources in underprivileged areas.",
+    image: "/education.jpg",
+    status: "ongoing",
+    category: "Education",
+  },
+  {
+    id: 7,
+    title: "Sustainable Agriculture",
+    description:
+      "Teaching sustainable farming techniques to improve food security and livelihoods.",
+    image: "/Sustainable-Agriculture.png",
+    status: "completed",
+    category: "Sustainable Agriculture",
   },
 ];
 
-function Projects() {
-  const [filter, setFilter] = useState("all");
+const categories = [
+  "All",
+  "Education",
+  "Energy",
+  "Health",
+  "Clean Water",
+  "Sustainable Agriculture",
+];
 
-  const filteredProjects = projects.filter(
-    (project) => filter === "all" || project.status === filter
-  );
+function Projects() {
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [filter, setFilter] = useState("all");
+  const location = useLocation();
+
+  const filteredProjects = projects.filter((project) => {
+    const categoryMatch =
+      activeCategory === "All" || project.category === activeCategory;
+    const statusMatch = filter === "all" || project.status === filter;
+    return categoryMatch && statusMatch;
+  });
+
+  const displayedProjects =
+    location.pathname === "/" ? filteredProjects.slice(0, 3) : filteredProjects;
 
   return (
-    <div className="bg-gray-100 min-h-screen">
-      <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+    <div className="bg-white min-h-screen">
+      <div className="max-w-7xl mx-auto  py-16 px-4 sm:py-18 sm:px-6 lg:px-8">
+        {/* Header */}
         <div className="text-center">
-          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl pt-4">
+          <h2 className="text-3xl sm:pt-8 mt-6 font-extrabold text-gray-900 sm:text-4xl">
             Our Projects
           </h2>
           <p className="mt-4 text-xl text-gray-500">
@@ -64,103 +104,108 @@ function Projects() {
           </p>
         </div>
 
-        <div className="mt-12">
-          <div className="flex justify-center space-x-4 mb-8">
+        {location.pathname === "/projects" && (
+          <div className="mt-12">
+            <div className="flex flex-wrap  justify-center space-y-2 space-x-2 overflow-x-auto">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setActiveCategory(category)}
+                  className={`whitespace-nowrap px-4 py-2 rounded-md transition-colors duration-300 ${
+                    activeCategory === category
+                      ? "bg-lime-500 text-white"
+                      : "bg-white text-gray-700 hover:bg-gray-200"
+                  }`}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {location.pathname === "/projects" && (
+          <div className="mt-8 flex justify-center space-x-4">
             <button
               onClick={() => setFilter("all")}
-              className={`px-4 py-2 rounded-md ${
+              className={`px-4 py-2 rounded-md transition-colors duration-300 ${
                 filter === "all"
                   ? "bg-lime-500 text-white"
-                  : "bg-white text-gray-700"
+                  : "bg-white text-gray-700 hover:bg-gray-200"
               }`}
             >
               All Projects
             </button>
             <button
               onClick={() => setFilter("ongoing")}
-              className={`px-4 py-2 rounded-md ${
+              className={`px-4 py-2 rounded-md transition-colors duration-300 ${
                 filter === "ongoing"
                   ? "bg-lime-500 text-white"
-                  : "bg-white text-gray-700"
+                  : "bg-white text-gray-700 hover:bg-gray-200"
               }`}
             >
               Ongoing
             </button>
             <button
               onClick={() => setFilter("completed")}
-              className={`px-4 py-2 rounded-md ${
+              className={`px-4 py-2 rounded-md transition-colors duration-300 ${
                 filter === "completed"
                   ? "bg-lime-500 text-white"
-                  : "bg-white text-gray-700"
+                  : "bg-white text-gray-700 hover:bg-gray-200"
               }`}
             >
               Completed
             </button>
           </div>
+        )}
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {filteredProjects.map((project) => (
-              <div
-                key={project.id}
-                className="bg-white overflow-hidden shadow-lg rounded-lg"
-              >
-                <Link to={`/projects/${project.id}`}>
-                  <img
-                    className="w-full h-48 object-cover"
-                    src={project.image}
-                    alt={project.title}
-                  />
-                  <div className="p-6">
-                    <h3 className="text-lg font-semibold text-gray-900">
-                      {project.title}
-                    </h3>
-                    <p className="mt-2 text-gray-600">{project.description}</p>
-                    <div className="mt-4">
-                      <span
-                        className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                          project.status === "ongoing"
-                            ? "bg-lime-100 text-lime-800"
-                            : "bg-green-100 text-green-800"
-                        }`}
-                      >
-                        {project.status === "ongoing" ? "Ongoing" : "Completed"}
-                      </span>
-                    </div>
+        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {displayedProjects.map((project) => (
+            <div
+              key={project.id}
+              className="bg-white overflow-hidden shadow-lg rounded-lg"
+            >
+              <Link to={`/projects/${project.id}`}>
+                <img
+                  className="w-full h-48 object-cover"
+                  src={project.image}
+                  alt={project.title}
+                />
+                <div className="p-6">
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    {project.title}
+                  </h3>
+                  <p className="mt-2 text-gray-600">{project.description}</p>
+                  <div className="mt-4">
+                    <span
+                      className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                        project.status === "ongoing"
+                          ? "bg-lime-100 text-lime-800"
+                          : "bg-green-100 text-green-800"
+                      }`}
+                    >
+                      {project.status === "ongoing" ? "Ongoing" : "Completed"}
+                    </span>
                   </div>
-                </Link>
-              </div>
-            ))}
-          </div>
+                </div>
+              </Link>
+            </div>
+          ))}
         </div>
+
+        {location.pathname === "/" && (
+          <div className="mt-12 text-center">
+            <Link
+              to="/projects"
+              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-lime-600 hover:bg-lime-700"
+            >
+              View All Projects
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );
 }
 
 export default Projects;
-
-// import React, { useEffect, useState } from 'react';
-
-// const Projects = () => {
-//   const [projects, setProjects] = useState([]);
-
-//   useEffect(() => {
-//     fetch('/path/to/projects.json')
-//       .then(response => response.json())
-//       .then(data => setProjects(data.projects));
-//   }, []);
-
-//   return (
-//     <div>
-//       {projects.map(project => (
-//         <div key={project.id}>
-//           <h2>{project.title}</h2>
-//           <p>{project.description}</p>
-//           <img src={project.image} alt={project.title} />
-//         </div>
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default Projects;

@@ -4,7 +4,7 @@ const FundraisingStats = () => {
       <h2 className="text-sm lg:text-6xl justify-center text-center font-bold lg:mx-40">
         Fundraising on Gocingo takes just a few minutes
       </h2>
-      <div className="mt-8 flex justify-around text-sm lg:text-lg grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 ">
+      <div className="mt-8 flex justify-around text-sm lg:text-lg grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3 ">
         <div className="text-center">
           <img
             src="/team-member-1.jpg"
