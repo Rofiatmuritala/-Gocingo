@@ -8,61 +8,64 @@
 5. [Pages](#pages)
 6. [Styling](#styling)
 7. [Data Management](#data-management)
-8. [Deployment](#deployment)
-9. [Contributing](#contributing)
-10. [License](#license)
+8. [Development](#development)
+9. [Building for Production](#building-for-production)
+10. [Contributing](#contributing)
 
 ## Overview
-This project is a comprehensive website for a Non-Governmental Organization (NGO) built using React and Next.js. It showcases the organization's projects, facilitates donations, and provides information about the NGO's mission and team.
+This project is a comprehensive website for a Non-Governmental Organization (NGO) built using React and Vite. It showcases the organization's projects, facilitates donations, and provides information about the NGO's mission and team.
 
 ## Project Structure
 ```
-
 ngo/
 ├── src/
 │   ├── components/
-│   │   ├── about.js
-│   │   ├── contact.js
-│   │   ├── donate.js
-│   │   ├── faqs.js
-│   │   ├── footer.js
-│   │   ├── fundraising.js
-│   │   ├── getinvolve.js
-│   │   ├── hero.js
-│   │   ├── navbar.js
-│   │   ├── project.js
-│   │   ├── projects.js
-│   │   └── team.js
-├── app/
-│   ├── page.js
-│   ├── about/
-│   │   └── page.js
-│   ├── projects/
-│   │   └── page.js
-│   ├── contact/
-│   │   └── page.js
-│   ├── donate/
-│   │   └── page.js
-│   └── layout.js
+│   │   ├── FAQ.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Fundraising.jsx
+│   │   ├── FundraisingStats.jsx
+│   │   ├── Hero.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── Team.jsx
+│   │   └── WorkWithUs.jsx
+│   ├── pages/
+│   │   ├── About.jsx
+│   │   ├── Contact.jsx
+│   │   ├── Donate.jsx
+│   │   ├── FAQsPage.jsx
+│   │   ├── GetInvolve.jsx
+│   │   ├── Home.jsx
+│   │   ├── Project.jsx
+│   │   └── ProjectDetail.jsx
+│   ├── data/
+│   │   └── FAQsAPI.json
+│   ├── assets/
+│   ├── App.css
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
 ├── public/
 ├── .gitignore
-├── next.config.mjs
+├── eslint.config.js
+├── index.html
 ├── package.json
 ├── package-lock.json
-├── postcss.config.mjs
+├── postcss.config.js
 ├── README.md
-└── tailwind.config.js
+├── tailwind.config.js
+└── vite.config.js
+```
 
 ## Setup and Installation
 
 ### Prerequisites
-- Node.js (v14 or later)
+- Node.js (v14 or later recommended)
 - npm (v6 or later)
 
 ### Steps
 1. Clone the repository:
-   ```
-   git clone [(https://github.com/Rofiatmuritala/Gocingo,git)]
+   ``` 
+   git clone [(https://github.com/Rofiatmuritala/-Gocingo.git)]
    cd ngo-website
    ```
 
@@ -71,113 +74,69 @@ ngo/
    npm install
    ```
 
-3. Run the development server:
+3. Start the development server:
    ```
    npm run dev
    ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+4. Open the provided localhost URL in your browser.
 
 ## Components
-All components are located in the src/components directory:
-### 1. Navbar (`navbar.js`)
-- Navigation component
-- Implements responsive design
-- Links to main sections of the website
-
-### 2. Hero (`hero.js`)
-- Main landing section
-- Displays key message and call-to-action
-
-### 3. Projects (`projects.js`)
-- Displays list of NGO projects
-- Uses data from the `const projects` array
-
-### 4. Project (`project.js`)
-- Individual project component
-- Displays project details (title, description, image, status, category)
-
-### 5. About (`about.js`)
-- Information about the NGO
-- Mission statement and goals
-
-### 6. Team (`team.js`)
-- Displays information about team members
-
-### 7. Contact (`contact.js`)
-- Contact form for user inquiries
-
-### 8. Donate (`donate.js`)
-- Donation form or information
-
-### 9. FAQs (`faqs.js`)
-- Frequently Asked Questions section
-
-### 10. Footer (`footer.js`)
-- Website footer with links and additional information
-
-### 11. Fundraising (`fundraising.js`)
-- Information about fundraising campaigns
-
-### 12. GetInvolve (`getinvolve.js`)
-- Information on how users can get involved with the NGO
+Located in `src/components/`:
+- FAQ.jsx: Frequently Asked Questions 
+- Footer.jsx: Website footer
+- Fundraising.jsx: Displays Fundraising information
+- FundraisingStats.jsx: Displays fundraising statistics
+- Hero.jsx: Hero section for landing page
+- Navbar.jsx: Navigation bar
+- Team.jsx: Team members showcase
+- WorkWithUs.jsx: Information on joining as a volunteer the NGO
 
 ## Pages
-Pages are located in the src directory
-### 1. Home Page (`src/pages/Home.jsx`)
-- Main landing page
-- Incorporates Hero, Projects, and other key components
-
-### 2. About Page (`app/about/page.js`)
-- Detailed information about the NGO
-- Incorporates About and Team components
-
-### 3. Projects Page (`app/projects/page.js`)
-- Comprehensive list of all NGO projects
-- Uses Projects component
-
-### 4. Contact Page (`app/contact/page.js`)
-- Contact information and form
-- Uses Contact component
-
-### 5. Donate Page (`app/donate/page.js`)
-- Donation information and options
-- Uses Donate component
-
-
-### 6. Layout (app/layout.js)
-Root layout component that wraps all pages
-Includes elements like the Navbar and Footer
+Located in `src/pages/`:
+- About.jsx: About the NGO
+- Contact.jsx: Contact information and form
+- Donate.jsx: Donation page
+- FAQsPage.jsx: FAQ page
+- GetInvolve.jsx: Ways to get involved
+- Home.jsx: Landing page
+- Project.jsx: Projects overview
+- ProjectDetail.jsx: Detailed view of a project
 
 ## Styling
 - The project uses Tailwind CSS for styling
 - Tailwind configuration is in `tailwind.config.js`
+- Additional styles may be found in `src/index.css` and `src/App.css`
 
 ## Data Management
-- Project data is stored in the `projects` array in `projects.js`
+- Some data (e.g., FAQs) is stored in JSON format in the `src/data/` directory
 - Consider implementing a CMS or backend API for dynamic data management in future iterations
 
-## Deployment
-1. Build the project:
-   ```
-   npm run build
-   ```
+## Development
+To start the development server:
+```
+npm run dev
+```
+This will start the Vite development server with hot module replacement.
 
-2. Start the production server:
-   ```
-   npm start
-   ```
+## Building for Production
+To build the project for production:
+```
+npm run build
+```
+This will generate optimized assets in the `dist/` directory.
 
-3. Deploy to your preferred hosting platform (e.g., Vercel, Netlify)
+To preview the production build locally:
+```
+npm run preview
+```
 
 ## Contributing
 We welcome contributions to improve the website. Please follow these steps:
 1. Fork the repository
-2. Create a new branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
+2. Create a new branch (`git checkout -b README`)
+3. Commit your changes (`git commit -m 'updating the readme'`)
+4. Push to the branch (`git push origin README`)
 5. Open a Pull Request
 
-## License
-
-
+---
