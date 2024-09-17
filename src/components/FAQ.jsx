@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const FAQSection = () => {
   const [faqs, setFaqs] = useState([]);
+
+  // Get the current url
+  const { pathname } = useLocation();
 
   useEffect(() => {
     // Dynamically importing the faqs JSON file
@@ -18,11 +21,10 @@ const FAQSection = () => {
     <div className="mt-28">
       <h2 className="text-3xl font-bold text-center  mb-2">
         Frequently Asked Questions
-        {location.pathname === "/" && <Link to={"/popular"}>View all</Link>}
       </h2>
 
       <div className="bg-white border border-gray-200 divide-y divide-gray-200 rounded-xl m-2 md:m-8 ">
-        {location.pathname === "/" &&
+        {pathname === "/" &&
           faqs &&
           faqs.slice(0, 4).map((faq) => (
             <details className="p-6 group" close key={faq.id}>
@@ -65,7 +67,7 @@ const FAQSection = () => {
               <p className="mt-4 leading-relaxed text-gray-700">{faq.answer}</p>
             </details>
           ))}
-        {location.pathname === "/faqs" &&
+        {pathname === "/contact" &&
           faqs &&
           faqs.map((faq) => (
             <details className="p-6 group" close key={faq.id}>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import FAQSection from "../components/FAQ";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -130,6 +131,7 @@ function Contact() {
           </div>
         </div>
       </div>
+      <FAQSection />
     </div>
   );
 }
